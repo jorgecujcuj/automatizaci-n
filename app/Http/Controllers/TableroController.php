@@ -11,6 +11,11 @@ use Illuminate\Http\Request;
  */
 class TableroController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +23,7 @@ class TableroController extends Controller
      */
     public function index()
     {
-        $tableros = Tablero::paginate();
+        $tableros = Tablero::paginate(10);
 
         return view('tablero.index', compact('tableros'))
             ->with('i', (request()->input('page', 1) - 1) * $tableros->perPage());
@@ -48,7 +53,7 @@ class TableroController extends Controller
         $tablero = Tablero::create($request->all());
 
         return redirect()->route('tableros.index')
-            ->with('success', 'Tablero created successfully.');
+            ->with('success', 'Tablero creada con éxito.');
     }
 
     /**
@@ -91,7 +96,7 @@ class TableroController extends Controller
         $tablero->update($request->all());
 
         return redirect()->route('tableros.index')
-            ->with('success', 'Tablero updated successfully');
+            ->with('success', 'Accion realizada');
     }
 
     /**
@@ -104,6 +109,6 @@ class TableroController extends Controller
         $tablero = Tablero::find($id)->delete();
 
         return redirect()->route('tableros.index')
-            ->with('success', 'Tablero deleted successfully');
+            ->with('success', 'Dato eliminado con éxito');
     }
 }
