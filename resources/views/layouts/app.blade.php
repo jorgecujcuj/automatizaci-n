@@ -37,7 +37,7 @@
                     <ul class="navbar-nav text-center">
                         <!-- Lado izquierdo de la barra de navegación -->
                         <li class="nav-item active">
-                            <a class="nav-link text-light bg-info" style="border-radius:25px; margin-right: 15px;" href="{{ url('/') }}">{{ __('  Ruta  ') }}<span class="sr-only">(current)</span></a>
+                            <a class="nav-link text-light bg-info" style="border-radius:25px; margin-right: 15px;" href="{{ url('imgs') }}">{{ __('  Ruta  ') }}<span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
                     <div class="dropdown-divider"></div>
