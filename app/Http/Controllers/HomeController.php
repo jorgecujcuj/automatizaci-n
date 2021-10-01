@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
+    /**metodo de autenticaciones de usuario
      * Create a new controller instance.
      *
      * @return void
@@ -16,7 +16,7 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    /**
+    /**metodo de la vista del index
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable

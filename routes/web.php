@@ -22,3 +22,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('tableros', App\Http\Controllers\TableroController::class);
 Route::resource('imgs', App\Http\Controllers\ImgController::class);
+Route::resource('operaciones', App\Http\Controllers\OperacioneController::class);

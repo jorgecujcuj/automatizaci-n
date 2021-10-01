@@ -16,10 +16,13 @@ class Operaciones extends Migration
         //
         Schema::create('operaciones', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('idcatalogo')->nullable();
-            $table->bigInteger('idtablero')->nullable();
-            $table->bigInteger('iduser')->nullable();
+            $table->unsignedBigInteger('idcatalogo')->nullable();
+            $table->unsignedBigInteger('idtablero')->nullable();
+            $table->unsignedBigInteger('iduser')->nullable();
             $table->timestamps();
+            $table->foreign('idcatalogo')->references('id')->on('catalogovariables');
+            $table->foreign('idtablero')->references('id')->on('tableros');
+            $table->foreign('iduser')->references('id')->on('users');
         });
     }
 

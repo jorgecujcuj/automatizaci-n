@@ -5,23 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Tablero
+ * Class Operacione
  *
  * @property $id
- * @property $descripcion
- * @property $estado
+ * @property $idcatalogo
+ * @property $idtablero
+ * @property $iduser
  * @property $created_at
  * @property $updated_at
  *
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class Tablero extends Model
+class Operacione extends Model
 {
     
     static $rules = [
-		'descripcion' => 'required',
-		'estado' => 'required',
     ];
 
     protected $perPage = 20;
@@ -31,6 +30,6 @@ class Tablero extends Model
      *
      * @var array
      */
-    protected $fillable = ['descripcion','estado'];
+    protected $fillable = ['idcatalogo','idtablero','iduser'];
 
 }

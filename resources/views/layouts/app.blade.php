@@ -43,7 +43,7 @@
                     <div class="dropdown-divider"></div>
                     <ul class="navbar-nav text-center">
                         <li class="nav-item active">
-                        <a class="nav-link text-light bg-info" style="border-radius:25px; margin-right: 15px;" href="{{ url('/') }}">{{ __('  Eventos  ') }}<span class="sr-only">(current)</span></a>
+                        <a class="nav-link text-light bg-info" style="border-radius:25px; margin-right: 15px;" href="{{ url('operaciones') }}">{{ __('  Eventos  ') }}<span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
 

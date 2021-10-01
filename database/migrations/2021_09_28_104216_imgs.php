@@ -16,9 +16,10 @@ class Imgs extends Migration
         //
         Schema::create('imgs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('idtablero');
+            $table->unsignedBigInteger('idtablero');
             $table->string('img');
             $table->timestamps();
+            $table->foreign('idtablero')->references('id')->on('tableros');
         });
     }
     /**

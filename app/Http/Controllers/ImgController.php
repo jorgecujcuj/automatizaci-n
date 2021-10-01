@@ -16,17 +16,14 @@ use Illuminate\Support\Collection;
  */
 class ImgController extends Controller
 {
-    /**
+    /**metodo de la vista del index
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        /*$imgs = Img::paginate();
-        return view('img.index', compact('imgs'))
-            ->with('i', (request()->input('page', 1) - 1) * $imgs->perPage());
-        */
+
         $imgs=DB::table('imgs')
         ->join('tableros','tableros.id', '=' ,'imgs.idtablero')
         ->select('imgs.id as id','imgs.idtablero as idtablero','imgs.img as img','tableros.estado as estado')
@@ -34,7 +31,7 @@ class ImgController extends Controller
         return view('img.index', compact('imgs'));
     }
 
-    /**
+    /**metodo que crea un nuevo dato
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -46,7 +43,7 @@ class ImgController extends Controller
         return view('img.create', compact('img','tableros'));
     }
 
-    /**
+    /**metodod que prepara un datos para ser guardado
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
@@ -72,7 +69,7 @@ class ImgController extends Controller
             ->with('success', 'Img created successfully.');
     }
 
-    /**
+    /**metodo para ver los datos
      * Display the specified resource.
      *
      * @param  int $id
@@ -85,7 +82,7 @@ class ImgController extends Controller
         return view('img.show', compact('img'));
     }
 
-    /**
+    /**metodo para editar los datos
      * Show the form for editing the specified resource.
      *
      * @param  int $id
@@ -98,7 +95,7 @@ class ImgController extends Controller
         return view('img.edit', compact('img','tableros'));
     }
 
-    /**
+    /**metodo para actualizar un dato
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
@@ -109,7 +106,6 @@ class ImgController extends Controller
     {
         request()->validate(Img::$rules);
 
-        /*$img->update($request->all());*/
         $Imge = $request->all();
 
          if($img = $request->file('img')){
@@ -126,7 +122,7 @@ class ImgController extends Controller
             ->with('success', 'Img updated successfully');
     }
 
-    /**
+    /**metodo para eliminar un dato
      * @param int $id
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception

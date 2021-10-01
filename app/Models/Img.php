@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Img extends Model
 {
-    
+  
     static $rules = [
 		'idtablero' => 'required',
 		'img' => 'required|image|mimes:jpeg,png,svg|max:1024',
@@ -32,7 +32,5 @@ class Img extends Model
      * @var array
      */
     protected $fillable = ['idtablero','img'];
-
-
 
 }

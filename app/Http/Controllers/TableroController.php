@@ -16,7 +16,7 @@ class TableroController extends Controller
         $this->middleware('auth');
     }
 
-    /**
+    /**Metodo de la vista de index
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -29,7 +29,7 @@ class TableroController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * $tableros->perPage());
     }
 
-    /**
+    /**metodo que crea un nuevo dato
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -40,7 +40,7 @@ class TableroController extends Controller
         return view('tablero.create', compact('tablero'));
     }
 
-    /**
+    /**Metodo que prepara la creacion de un dato
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
@@ -56,7 +56,7 @@ class TableroController extends Controller
             ->with('success', 'Tablero creada con éxito.');
     }
 
-    /**
+    /**metodo que muestra los datos
      * Display the specified resource.
      *
      * @param  int $id
@@ -69,7 +69,7 @@ class TableroController extends Controller
         return view('tablero.show', compact('tablero'));
     }
 
-    /**
+    /**metodod que permite editar
      * Show the form for editing the specified resource.
      *
      * @param  int $id
@@ -82,7 +82,7 @@ class TableroController extends Controller
         return view('tablero.edit', compact('tablero'));
     }
 
-    /**
+    /**metodo para actualizar un dato
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
@@ -99,7 +99,7 @@ class TableroController extends Controller
             ->with('success', 'Accion realizada');
     }
 
-    /**
+    /**metodo para eliminar un dato
      * @param int $id
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
